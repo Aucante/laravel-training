@@ -4,7 +4,7 @@
     <div class="container text-center my-3">
         <h1>Articles</h1>
     </div>
-    <div class="container">
+    <div class="container text-center">
         <div class="row">
             <div class="col-6 offset-3">
                 @foreach($articles as $article)
@@ -17,9 +17,9 @@
                         </div>
                     </div>
                 @endforeach
-            </div>
-            <div class="d-flex justify-content mt-5">
-                {{ $articles->links() }}
+                    <div class="mt-5">
+                        {{ $articles->links('vendor.pagination.custom') }}
+                    </div>
             </div>
         </div>
     </div>
