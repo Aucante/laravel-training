@@ -18,4 +18,12 @@ class MainController extends Controller
             'articles' => $articles
         ]);
     }
+
+    public function show($id) {
+
+        $article = Article::where('id', $id)->firstOrFail();
+        return view('article', [
+            'article' => $article
+        ]);
+    }
 }
