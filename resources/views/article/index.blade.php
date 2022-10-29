@@ -1,5 +1,5 @@
 @extends('base')
 
 @section('content')
-ADMIN
+ADMIN Ressources
 @endsection
