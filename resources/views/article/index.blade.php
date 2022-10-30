@@ -20,7 +20,7 @@
                 <td>{{ $article->subtitle }}</td>
                 <td>{{ $article->dateFormatted() }}</td>
                 <td class="d-flex">
-                    <a href="#" class="btn btn-warning">Editer</a>
+                    <a href="#" class="btn btn-warning">Modifier</a>
                     <a href="#" class="btn btn-danger">Supprimer</a>
                 </td>
             </tr>
