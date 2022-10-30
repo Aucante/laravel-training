@@ -2,6 +2,10 @@
 
 @section('content')
 <div class="container my-5">
+    <h1 class="display-3 text-center py-4">Articles</h1>
+    <div class="d-flex justify-content-center">
+        <a href="{{ route('article.create') }}" class="btn btn-info">Ajouter un article</a>
+    </div>
     <table class="table table-hover">
         <thead>
         <tr class="table-active">
