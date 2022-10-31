@@ -43,7 +43,8 @@ class ArticleController extends Controller
         DB::table('articles')->insert([
             'title' => $request->input('title'),
             'subtitle' => $request->input('subtitle'),
-            'content' => $request->input('content')
+            'content' => $request->input('content'),
+            'created_at' => new \DateTime()
         ]);
         return redirect()->route('articles.index');
     }
