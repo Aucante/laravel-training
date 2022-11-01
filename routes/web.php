@@ -29,3 +29,4 @@ Auth::routes();
 Route::get('/admin/articles', [ArticleController::class, 'index'])->middleware('admin')->name('articles.index');
 Route::get('/admin/article/create', [ArticleController::class, 'create'])->middleware('admin')->name('article.create');
 Route::post('/admin/article/store', [ArticleController::class, 'store'])->middleware('admin')->name('article.store');
+Route::delete('/admin/article/{article}/delete', [ArticleController::class, 'delete'])->middleware('admin')->name('article.delete');
