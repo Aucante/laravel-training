@@ -49,7 +49,7 @@ class ArticleController extends Controller
             'content' => $request->input('content'),
             'created_at' => new \DateTime()
         ]);
-        return redirect()->route('articles.index');
+        return redirect()->route('articles.index')->with('success', "L'article est sauvegardé");
     }
 
     /**

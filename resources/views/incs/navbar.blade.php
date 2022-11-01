@@ -19,7 +19,7 @@
                 @if(Auth::User())
                     @if(Auth::User()->role === 'ADMIN')
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Espace Admin</a>
+                            <a class="nav-link active" aria-current="page" href="{{ route('articles.index') }}">Espace Admin</a>
                         </li>
                     @endif
                     <form action="{{route('logout')}}" method="POST">
