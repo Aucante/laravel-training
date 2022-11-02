@@ -27,6 +27,8 @@ Route::get('/article/{article:id}', [MainController::class, 'show'])->name('arti
 Auth::routes();
 
 Route::get('/admin/articles', [ArticleController::class, 'index'])->middleware('admin')->name('articles.index');
-Route::get('/admin/article/create', [ArticleController::class, 'create'])->middleware('admin')->name('article.create');
-Route::post('/admin/article/store', [ArticleController::class, 'store'])->middleware('admin')->name('article.store');
-Route::delete('/admin/article/{article}/delete', [ArticleController::class, 'delete'])->middleware('admin')->name('article.delete');
+Route::get('/admin/articles/create', [ArticleController::class, 'create'])->middleware('admin')->name('article.create');
+Route::post('/admin/articles/store', [ArticleController::class, 'store'])->middleware('admin')->name('article.store');
+Route::delete('/admin/articles/{article}/delete', [ArticleController::class, 'delete'])->middleware('admin')->name('article.delete');
+Route::get('/admin/articles/{article}/edit', [ArticleController::class, 'edit'])->middleware('admin')->name('article.edit');
+Route::put('/admin/articles/{article}/update', [ArticleController::class, 'update'])->middleware('admin')->name('article.update');

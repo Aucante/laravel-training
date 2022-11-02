@@ -24,7 +24,7 @@
                 <td>{{ $article->subtitle }}</td>
                 <td>{{ $article->dateFormatted() }}</td>
                 <td class="d-flex">
-                    <a href="#" class="btn btn-warning">Modifier</a>
+                    <a href="{{ route('article.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
                     <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open-{{ $article->id }}').style.display='block'">Supprimer</button>
                     <form action="{{ route('article.delete', $article->id) }}" method="POST">
                         @csrf
