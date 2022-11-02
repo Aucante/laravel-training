@@ -25,10 +25,29 @@
                 <td>{{ $article->dateFormatted() }}</td>
                 <td class="d-flex">
                     <a href="#" class="btn btn-warning">Modifier</a>
+                    <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open-{{ $article->id }}').style.display='block'">Supprimer</button>
                     <form action="{{ route('article.delete', $article->id) }}" method="POST">
                         @csrf
                         @method("DELETE")
-                        <button type="submit" class="btn btn-danger">Supprimer</button>
+                        <div class="modal" id="modal-open-{{ $article->id }}">
+                            <div class="modal-dialog" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Suppresion élément</h5>
+                                        <button type="button" class="btn-close" onclick="document.getElementById('modal-open').style.display='none'" data-bs-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true"></span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Vous allez supprimer l'élément</p>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="submit" class="btn btn-primary">Supprimer</button>
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="document.getElementById('modal-open').style.display='none'">Annuler</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </form>
                 </td>
             </tr>
