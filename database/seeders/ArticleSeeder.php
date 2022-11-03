@@ -24,8 +24,9 @@ class ArticleSeeder extends Seeder
                 'title' => Str::title('Titre ' . $i),
                 'subtitle' => Str::title('Sous titre ' . $i),
                 'slug' => Str::slug('slug titre' . $i),
-                'content' => $faker->text(500),
+                'content' => $faker->text(4500),
                 'created_at' => new \DateTime(),
+                'updated_at' => new \DateTime(),
             ]);
         }
     }

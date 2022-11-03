@@ -22,7 +22,7 @@ Route::get('/', function () {
 Route::get('/', [MainController::class, 'home']);
 
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
-Route::get('/article/{article:id}', [MainController::class, 'show'])->name('article');
+Route::get('/article/{article:slug}', [MainController::class, 'show'])->name('article');
 
 Auth::routes();
 
