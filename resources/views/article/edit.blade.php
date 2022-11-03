@@ -5,7 +5,7 @@
         <h1 class="display-4 text-center">
             Editer cet article
         </h1>
-        <form action="{{ route('article.update', $article->id) }}" method="POST">
+        <form action="{{ route('articles.update', $article->id) }}" method="POST">
             @method("PUT")
             @csrf
             <div class="col-12">

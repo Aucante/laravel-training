@@ -5,7 +5,7 @@
         <h1 class="display-4 text-center">
             Poster un nouvel article
         </h1>
-        <form action="{{ route('article.store') }}" method="POST">
+        <form action="{{ route('articles.store') }}" method="POST">
             @csrf
             <div class="col-12">
                 <div class="form-group">

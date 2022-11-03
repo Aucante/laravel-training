@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\ArticleRequest;
+use App\Manager\ArticleManager;
 use App\Models\Article;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
@@ -11,6 +12,14 @@ use Illuminate\Support\Facades\DB;
 
 class ArticleController extends Controller
 {
+
+    private $manager;
+
+    public function __construct(ArticleManager $manager)
+    {
+        $this->manager = $manager;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -43,12 +52,7 @@ class ArticleController extends Controller
     public function store(ArticleRequest $request)
     {
         $validated = $request->validated();
-        DB::table('articles')->insert([
-            'title' => $request->input('title'),
-            'subtitle' => $request->input('subtitle'),
-            'content' => $request->input('content'),
-            'created_at' => new \DateTime()
-        ]);
+        $this->manager->build(new Article(), $request);
         return redirect()->route('articles.index')->with('success', "L'article est sauvegardé");
     }
 
@@ -85,10 +89,7 @@ class ArticleController extends Controller
      */
     public function update(ArticleRequest $request, Article $article)
     {
-            $article->title = $request->input('title');
-            $article->subtitle = $request->input('subtitle');
-            $article->content = $request->input('content');
-            $article->save();
+        $this->manager->build($article, $request);
         return redirect()->route('articles.index')->with('warning', "L'article est modifié");
     }
 

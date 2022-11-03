@@ -4,7 +4,7 @@
 <div class="container my-5">
     <h1 class="display-3 text-center py-4">Articles</h1>
     <div class="d-flex justify-content-center">
-        <a href="{{ route('article.create') }}" class="btn btn-info">Ajouter un article</a>
+        <a href="{{ route('articles.create') }}" class="btn btn-info">Ajouter un article</a>
     </div>
     <table class="table table-hover">
         <thead>
@@ -24,9 +24,9 @@
                 <td>{{ $article->subtitle }}</td>
                 <td>{{ $article->dateFormatted() }}</td>
                 <td class="d-flex">
-                    <a href="{{ route('article.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
+                    <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
                     <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open-{{ $article->id }}').style.display='block'">Supprimer</button>
-                    <form action="{{ route('article.delete', $article->id) }}" method="POST">
+                    <form action="{{ route('articles.delete', $article->id) }}" method="POST">
                         @csrf
                         @method("DELETE")
                         <div class="modal" id="modal-open-{{ $article->id }}">
