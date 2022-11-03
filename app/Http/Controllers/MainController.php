@@ -19,9 +19,8 @@ class MainController extends Controller
         ]);
     }
 
-    public function show($id) {
+    public function show(Article $article) {
 
-        $article = Article::where('id', $id)->firstOrFail();
         return view('article', [
             'article' => $article
         ]);

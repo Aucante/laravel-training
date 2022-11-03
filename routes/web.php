@@ -22,8 +22,13 @@ Route::get('/', function () {
 Route::get('/', [MainController::class, 'home']);
 
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
-Route::get('/article/{id}', [MainController::class, 'show'])->name('article');
+Route::get('/article/{article:id}', [MainController::class, 'show'])->name('article');
 
 Auth::routes();
 
-Route::get('/admin/articles', [ArticleController::class, 'index'])->middleware('admin');
+Route::prefix('admin')->middleware('admin')->group(function(){
+    Route::resource('articles', ArticleController::class)->except([
+        'show'
+    ]);
+});
+

@@ -11,7 +11,7 @@
                         <div class="card-body">
                             <p class="card-text">{{ $article->title }}</p>
                             <p class="card-text">{{ $article->subtitle }}</p>
-                            <p class="card-text">{{ $article->content }}</p>
+                            <p class="card-text">{!! $article->content !!}</p>
                             <a href="{{ route('articles') }}"><button class="btn btn-primary rounded-0 my-">Retour</button></a>
                         </div>
                     </div>
