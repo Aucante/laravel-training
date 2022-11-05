@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use App\Models\Article;
+use App\Models\Category;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -25,6 +25,7 @@ class ArticleSeeder extends Seeder
                 'subtitle' => Str::title('Sous titre ' . $i),
                 'slug' => Str::slug('slug titre' . $i),
                 'content' => $faker->text(4500),
+                'category_id' => Category::inRandomOrder()->first()->id,
                 'created_at' => new \DateTime(),
                 'updated_at' => new \DateTime(),
             ]);
