@@ -17,13 +17,16 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $categories = ['Sport', 'IT', 'Sciences'];
-        $faker = Factory::create();
+        Category::factory(5)->create();
 
-        for ($i = 0, $iMax = count($categories); $i < $iMax; $i++) {
-            Category::create([
-                'label' => $categories[$i]
-            ]);
-        }
+
+//        $categories = ['Sport', 'IT', 'Sciences'];
+//        $faker = Factory::create();
+//
+//        for ($i = 0, $iMax = count($categories); $i < $iMax; $i++) {
+//            Category::create([
+//                'label' => $categories[$i]
+//            ]);
+//        }
     }
 }
