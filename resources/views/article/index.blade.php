@@ -13,7 +13,8 @@
             <th scope="col">Titre</th>
             <th scope="col">Sous titre</th>
             <th scope="col">Slug</th>
-            <th scope="col">Crée le</th>
+            <th scope="col">Création</th>
+            <th scope="col">Catégorie</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
@@ -25,6 +26,7 @@
                 <td>{{ $article->subtitle }}</td>
                 <td>{{ $article->slug }}</td>
                 <td>{{ $article->dateFormatted() }}</td>
+                <td>{{ $article->category->label }}</td>
                 <td class="d-flex justify-content-center">
                     <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
                     <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open-{{ $article->id }}').style.display='block'">Supprimer</button>

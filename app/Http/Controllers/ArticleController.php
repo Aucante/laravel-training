@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\ArticleRequest;
 use App\Manager\ArticleManager;
 use App\Models\Article;
+use App\Models\Category;
 use Illuminate\Contracts\Foundation\Application;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -40,7 +41,9 @@ class ArticleController extends Controller
      */
     public function create()
     {
-        return view('article.create');
+        return view('article.create', [
+            'categories' => Category::all()
+        ]);
     }
 
     /**
@@ -76,7 +79,8 @@ class ArticleController extends Controller
     public function edit(Article $article)
     {
         return view('article.edit', [
-            'article' => $article
+            'article' => $article,
+            'categories' => Category::all()
         ]);
     }
 

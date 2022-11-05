@@ -14,6 +14,7 @@ class ArticleManager
         $article->subtitle = $request->input('subtitle');
         $article->slug = Str::slug($article->title);
         $article->content = $request->input('content');
+        $article->category_id = $request->input('category');
         $article->save();
     }
 }

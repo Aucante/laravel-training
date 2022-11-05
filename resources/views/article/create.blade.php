@@ -7,7 +7,7 @@
         </h1>
         <form action="{{ route('articles.store') }}" method="POST">
             @csrf
-            <div class="col-12">
+            <div class="col-12 my-2">
                 <div class="form-group">
                     <label>Titre</label>
                     <input type="text" name="title" class="form-control @error('title') is-invalid @enderror" placeholder="Titre article">
@@ -18,7 +18,7 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 my-2">
                 <div class="form-group">
                     <label>Sous titre</label>
                     <input type="text" name="subtitle" class="form-control is-invalid" placeholder="Sous-Titre article">
@@ -30,7 +30,17 @@
                     @enderror
                 </div>
             </div>
-            <div class="col-12">
+            <div class="col-12 my-2">
+                <div class="form-group">
+                    <label for="category">Catégorie</label>
+                    <select name="category" class="form-control">
+                        @foreach($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->label }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-12 my-2">
                 <div class="form-group">
                     <label>Contenu</label>
                     <textarea id="tiny-editor" name="content" class="form-control w-100"></textarea>
