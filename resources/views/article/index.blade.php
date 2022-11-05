@@ -2,28 +2,32 @@
 
 @section('content')
 <div class="container my-5">
-    <h1 class="display-3 text-center py-4">Articles</h1>
-    <div class="d-flex justify-content-center">
-        <a href="{{ route('articles.create') }}" class="btn btn-info">Ajouter un article</a>
+    <h1 class="display-3 text-center py-4">Tableau de bord</h1>
+    <div class="d-flex justify-content-center mb-3">
+        <a href="{{ route('articles.create') }}" class="btn btn-dark mb-4">Ajouter un article</a>
     </div>
     <table class="table table-hover">
         <thead>
-        <tr class="table-active">
+        <tr class="table-active text-center">
             <th scope="col">ID</th>
             <th scope="col">Titre</th>
             <th scope="col">Sous titre</th>
-            <th scope="col">Crée le</th>
+            <th scope="col">Slug</th>
+            <th scope="col">Création</th>
+            <th scope="col">Catégorie</th>
             <th scope="col">Action</th>
         </tr>
         </thead>
         <tbody>
         @foreach($articles as $article)
-            <tr>
+            <tr class="text-center">
                 <td>{{ $article->id }}</td>
                 <td>{{ $article->title }}</td>
                 <td>{{ $article->subtitle }}</td>
+                <td>{{ $article->slug }}</td>
                 <td>{{ $article->dateFormatted() }}</td>
-                <td class="d-flex">
+                <td>{{ $article->category->label }}</td>
+                <td class="d-flex justify-content-center">
                     <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-warning">Modifier</a>
                     <button type="button" class="btn btn-danger" onclick="document.getElementById('modal-open-{{ $article->id }}').style.display='block'">Supprimer</button>
                     <form action="{{ route('articles.destroy', $article->id) }}" method="POST">
@@ -54,7 +58,7 @@
         @endforeach
         </tbody>
     </table>
-    <div class="mt-5">
+    <div class="d-flex justify-content-center mt-5">
         {{ $articles->links('vendor.pagination.custom') }}
     </div>
 </div>

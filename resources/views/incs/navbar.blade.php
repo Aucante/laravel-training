@@ -1,21 +1,11 @@
 <nav class="navbar navbar-expand-lg bg-light">
     <div class="container-fluid">
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><i class="fa-solid fa-house"></i></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                </li>
-            </ul>
-            <ul class="navbar-nav ml-auto">
+        <a class="navbar-brand ms-4" href="{{ route('articles') }}">HOME</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+            <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
                 @if(Auth::User())
                     @if(Auth::User()->role === 'ADMIN')
                         <li class="nav-item">
@@ -24,11 +14,11 @@
                     @endif
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
-                        <button type="submit" class="btn">Deconnexion</button>
+                        <button type="submit" class="btn btn-dark">Deconnexion</button>
                     </form>
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="{{route('login')}}">Connexion</a>
+                    <li class="nav-item me-2">
+                        <a class="nav-link active btn btn-dark text-light" aria-current="page" href="{{route('login')}}">Connexion</a>
                     </li>
                 @endif
             </ul>
