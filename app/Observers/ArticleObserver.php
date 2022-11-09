@@ -16,7 +16,9 @@ class ArticleObserver
      */
     public function created(Article $article)
     {
-        //
+        $instance = new Slugify();
+        $article->slug = $instance->slugify($article->title);
+        $article->save();
     }
 
     /**
