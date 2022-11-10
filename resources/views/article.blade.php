@@ -12,7 +12,7 @@
                             <div class="d-flex justify-content-center row">
                                 <img src="{{ Voyager::image($article->image) }}" alt="{{ $article->subtitle }}" class="w-25 my-4">
                             </div>
-                            <p class="card-text display-6 fs-5">{!! $article->content !!}</p>
+                            <p class="card-text display-6 fs-5">{{ Markdown::parse($article->content) }}</p>
                             <p class="card-text display-6 fs-5 my-5">Dernière modification : {!! $article->updated_at !!}</p>
                             <a href="{{ route('articles') }}"><button class="btn btn-primary rounded-0">Retour</button></a>
                         </div>
