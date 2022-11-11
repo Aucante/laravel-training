@@ -54,8 +54,13 @@
                         <div class="row mb-0">
                             <div class="col-md-8 offset-md-4">
                                 <button type="submit" class="btn btn-primary">
+                                    <i class="fa-regular fa-user pe-2"></i>
                                     {{ __('Login') }}
                                 </button>
+                                <a class="btn btn-dark" href="{{ route('github.auth') }}">
+                                    <i class="fab fa-github pe-2"></i>
+                                    Connexion avec Github
+                                </a>
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
