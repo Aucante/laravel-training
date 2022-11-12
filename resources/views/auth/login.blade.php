@@ -57,16 +57,26 @@
                                     <i class="fa-regular fa-user pe-2"></i>
                                     {{ __('Login') }}
                                 </button>
-                                <a class="btn btn-dark" href="{{ route('github.auth') }}">
-                                    <i class="fab fa-github pe-2"></i>
-                                    Connexion avec Github
-                                </a>
+
 
                                 @if (Route::has('password.request'))
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+                            </div>
+                        </div>
+                        <div class="container py-4">
+                            <div class="container">
+                                <div class="d-flex justify-content-center py-2">
+                                    <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png" class="px-1"> Connexion avec Google</a>
+                                </div>
+                                <div class="d-flex justify-content-center py-2">
+                                    <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('github.auth') }}">
+                                        <i class="fab fa-github pe-3"></i>
+                                        Connexion avec Github
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </form>
