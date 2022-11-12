@@ -31,7 +31,9 @@ class AuthGithubController extends Controller
         $user = User::firstOrCreate([
             'email' => $userInfos->email
         ], [
-            'name' => $userInfos->name,
+            'name' => ($userInfos->name && !empty($userInfos->name))
+                ? $userInfos->name
+                : 'NC',
             'password' => Hash::make(Str::random(24)),
             'avatar' => ($userInfos->avatar && !empty($userInfos->avatar))
                         ? $this->manager->uploadAvatar($userInfos)
