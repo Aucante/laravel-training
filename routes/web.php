@@ -1,7 +1,7 @@
 <?php
 
-use App\Http\Controllers\ArticleController;
-use App\Http\Controllers\AuthGithubController;
+use App\Http\Controllers\Auth\AuthGithubController;
+use App\Http\Controllers\Auth\AuthGoogleController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Route;
 
@@ -39,3 +39,6 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::get('/auth/github', [AuthGithubController::class, 'auth'])->name('github.auth');
 Route::get('/auth/github/redirect', [AuthGithubController::class, 'redirect'])->name('github.redirect');
+
+Route::get('/auth/google', [AuthGoogleController::class, 'auth'])->name('google.auth');
+Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirect'])->name('google.redirect');

@@ -1,16 +1,16 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Manager\UserManager;
 use App\Models\User;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Socialite\Facades\Socialite;
 
-class AuthGithubController extends Controller
+class AuthGoogleController extends Controller
 {
     private $manager;
 
@@ -21,23 +21,21 @@ class AuthGithubController extends Controller
 
     public function auth()
     {
-        return Socialite::driver('github')->redirect();
+        return Socialite::driver('google')->redirect();
     }
 
     public function redirect()
     {
-        $userInfos = Socialite::driver('github')->stateless()->user();
+        $userInfos = Socialite::driver('google')->stateless()->user();
 
         $user = User::firstOrCreate([
             'email' => $userInfos->email
         ], [
-            'name' => ($userInfos->name && !empty($userInfos->name))
-                ? $userInfos->name
-                : 'NC',
+            'name' => $userInfos->name,
             'password' => Hash::make(Str::random(24)),
             'avatar' => ($userInfos->avatar && !empty($userInfos->avatar))
-                        ? $this->manager->uploadAvatar($userInfos)
-                        : User::DEFAULT_AVATAR_PATH
+                ? $this->manager->uploadAvatar($userInfos)
+                : User::DEFAULT_AVATAR_PATH
         ]);
 
         Auth::login($user);

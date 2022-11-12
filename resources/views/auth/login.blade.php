@@ -69,7 +69,7 @@
                         <div class="container py-4">
                             <div class="container">
                                 <div class="d-flex justify-content-center py-2">
-                                    <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="#"><img src="https://img.icons8.com/color/16/000000/google-logo.png" class="px-1"> Connexion avec Google</a>
+                                    <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('google.auth') }}"><i class="fab fa-google pe-3"></i>Connexion avec Google</a>
                                 </div>
                                 <div class="d-flex justify-content-center py-2">
                                     <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('github.auth') }}">
