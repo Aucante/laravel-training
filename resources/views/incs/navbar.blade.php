@@ -1,11 +1,11 @@
-<nav class="navbar navbar-expand-lg bg-light">
+<nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container-fluid">
-        <a class="navbar-brand ms-4" href="{{ route('articles') }}">HOME</a>
+        <a class="navbar-brand" href="{{ route('articles') }}"><img src="{{ asset('ExpertiseNutrition.png') }}" style="height: 50px"></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav ms-auto me-4 mb-2 mb-lg-0">
+            <ul class="navbar-nav ms-auto me-4">
                 @if(Auth::User())
                     @if(Auth::User()->role === 'ADMIN')
                         <li class="nav-item">
