@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-<div class="container">
+<div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -64,6 +64,7 @@
                                         {{ __('Forgot Your Password?') }}
                                     </a>
                                 @endif
+
                             </div>
                         </div>
                         <div class="container py-4">
@@ -75,6 +76,11 @@
                                     <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('github.auth') }}">
                                         <i class="fab fa-github pe-3"></i>
                                         Connexion avec Github
+                                    </a>
+                                </div>
+                                <div class="d-flex justify-content-center py-2">
+                                    <a class="btn btn-link" href="{{ route('register') }}">
+                                        Pas de compte ? S'inscrire ici
                                     </a>
                                 </div>
                             </div>
