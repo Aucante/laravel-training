@@ -12,12 +12,13 @@
                     <div class="col-md-10 offset-md-1">
                         @foreach($articles as $article)
                             <div class="card my-5">
+                                <img class="card-img-top" style="height: 14rem" src="{{ Voyager::image($article->image) }}" alt="Card image cap">
                                 <div class="card-body">
                                     <p>
                                         <span class="badge bg-info">{{ $article->category->label }}</span>
                                     </p>
                                     <p class="card-text display-6">{{ $article->title }}</p>
-                                    <p class="card-text">{{ substr($article->content, 0,370) }}<a href="{{ route('article', $article->slug) }}" class="text-info text-decoration-none"> ... Lire la suite</a></p>
+{{--                                    <p class="card-text">{{ substr($article->content, 0,370) }}<a href="{{ route('article', $article->slug) }}" class="text-info text-decoration-none"> ... Lire la suite</a></p>--}}
                                     <a href="{{ route('article', $article->slug) }}"><button class="btn btn-primary rounded-0 mt-2">Lire la suite</button></a>
                                 </div>
                             </div>
