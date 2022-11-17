@@ -70,18 +70,21 @@
                         <div class="container py-4">
                             <div class="container">
                                 <div class="d-flex justify-content-center py-2">
-                                    <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('google.auth') }}"><i class="fab fa-google pe-3"></i>Connexion avec Google</a>
+                                    <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('google.auth') }}"><i class="fab fa-google pe-3"></i>Sign in with Google</a>
                                 </div>
                                 <div class="d-flex justify-content-center py-2">
                                     <a class="btn btn-google btn-block text-uppercase btn-outline btn-outline shadow-sm" href="{{ route('github.auth') }}">
                                         <i class="fab fa-github pe-3"></i>
-                                        Connexion avec Github
+                                        Sign in with Github
                                     </a>
                                 </div>
                                 <div class="d-flex justify-content-center py-2">
                                     <a class="btn btn-link" href="{{ route('register') }}">
-                                        Pas de compte ? S'inscrire ici
+                                        No account ? Sign up here
                                     </a>
+                                </div>
+                                <div class="d-flex justify-content-center py-2">
+                                    <a class="navbar-brand" href="{{ route('home') }}"><img src="{{ asset('ExpertiseNutrition.png') }}" style="height: 50px"></a>
                                 </div>
                             </div>
                         </div>

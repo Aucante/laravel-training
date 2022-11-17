@@ -2,16 +2,16 @@
 
 @section('content')
     <div class="container text-center my-3">
-        <h1 class="display-3">Articles</h1>
+        <h1 class="display-3">BLOG</h1>
     </div>
     <livewire:filters :categories="$categories"/>
-    <div class="d-flex justify-content-center my-5">
+    <div class="d-flex justify-content-center my-2">
         <div class="container text-center">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-md-6 offset-md-3">
+                    <div class="col-md-10 offset-md-1">
                         @foreach($articles as $article)
-                            <div class="card my-4">
+                            <div class="card my-5">
                                 <div class="card-body">
                                     <p>
                                         <span class="badge bg-info">{{ $article->category->label }}</span>
