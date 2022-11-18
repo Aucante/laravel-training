@@ -9,7 +9,7 @@
         <div class="container text-center">
             <div class="row">
                 <div class="col-12">
-                    <div class="col-md-10 offset-md-1">
+                    <div class="col-md-6 offset-md-3">
                         @foreach($articles as $article)
                             <div class="card my-5">
                                 <img class="card-img-top" style="height: 14rem" src="{{ Voyager::image($article->image) }}" alt="Card image cap">
