@@ -4,7 +4,6 @@
     <div class="container text-center my-3">
         <h1 class="display-3">BLOG</h1>
     </div>
-    <livewire:filters :categories="$categories"/>
     <div class="d-flex justify-content-center my-2">
         <div class="container text-center">
             <div class="row">
