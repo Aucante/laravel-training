@@ -15,15 +15,29 @@
                             <p class="card-text display-6 fs-5 my-5">{{ Markdown::parse($article->content) }}</p>
                             <p class="card-text display-6 fs-6 my-5">Dernière modification : {!! $article->updated_at !!}</p>
                         </div>
-                        <div class="container">
-                            <h1 class="display-6">Commentaires</h1>
-                            @foreach($comments as $comment)
-                                <p class="display-6 fs-4">{{ $comment->content }}</p>
-                            @endforeach
-                        </div>
                     </div>
-                <a href="{{ route('articles') }}"><button class="btn btn-primary rounded-0 my-4">Retour</button></a>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center container">
+        <div class="container">
+            <h1 class="display-6 border-bottom border-3">Commentaires</h1>
+            @foreach($comments as $comment)
+                <div class="card my-4">
+                    <div class="card-header">
+                        <p class="display-6 fs-4">{{ $comment->content }}</p>
+                    </div>
+                    <div class="card-body">
+                        <p class="display-6 fs-5">{{ $comment->content }}</p>
+                    </div>
+                    <div class="card-footer">
+                        <p class="display-6 fs-6">{{ $comment->user->name }}</p>
+                    </div>
+                </div>
+            @endforeach
+        </div>
+    </div>
+    <div class="d-flex justify-content-center container">
+        <a href="{{ route('articles') }}"><button class="btn btn-primary rounded-0 my-4">Retour</button></a>
     </div>
 @stop
