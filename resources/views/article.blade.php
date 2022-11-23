@@ -21,20 +21,27 @@
     </div>
     <div class="d-flex justify-content-center container">
         <div class="container">
-            <h1 class="display-6 border-bottom border-3">Commentaires</h1>
-            @foreach($comments as $comment)
-                <div class="card my-4">
-                    <div class="card-header">
-                        <p class="display-6 fs-4">{{ $comment->content }}</p>
-                    </div>
-                    <div class="card-body">
-                        <p class="display-6 fs-5">{{ $comment->content }}</p>
-                    </div>
-                    <div class="card-footer">
-                        <p class="display-6 fs-6">{{ $comment->user->name }}</p>
-                    </div>
+            <div class="row">
+                <div class="col-md-10 offset-md-1">
+                    <h1 class="display-6 border-bottom border-3">Commentaires</h1>
+                    @foreach($comments as $comment)
+                        <div class="card my-4">
+                            <div class="card-header">
+                                <div class="d-flex align-content-start">
+                                    <img src="{{ Voyager::image($comment->user->avatar) }}" alt="{{ $comment->user->name }}-logo" class="img-thumbnail" style="height: 40px">
+                                    <p class="display-6 fs-4 mt-3 ms-2">{{ $comment->user->name }}</p>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <p class="display-6 fs-5">{{ $comment->content }}</p>
+                            </div>
+                            <div class="card-footer">
+                                <p class="display-6 fs-6">{{ $comment->updated_at}}</p>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
     <div class="d-flex justify-content-center container">
