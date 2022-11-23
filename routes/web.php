@@ -4,7 +4,9 @@ use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\AuthGithubController;
 use App\Http\Controllers\Auth\AuthGoogleController;
 use App\Http\Controllers\MainController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,11 +30,11 @@ Route::get('/article/{article:slug}', [MainController::class, 'show'])->name('ar
 
 Auth::routes();
 
-Route::prefix('user')->middleware('admin')->group(function(){
-    Route::resource('articles', ArticleController::class)->except([
-        'show'
-    ]);
-});
+//Route::prefix('user')->middleware('admin')->group(function(){
+//    Route::resource('articles', ArticleController::class)->except([
+//        'show'
+//    ]);
+//});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

@@ -44,7 +44,7 @@
             </div>
         </div>
     </div>
-    <div class="d-flex justify-content-center container">
+    <div class="d-flex justify-content-center container mb-4">
         <a href="{{ route('articles') }}"><button class="btn btn-primary rounded-0 my-4">Retour</button></a>
     </div>
 @stop

@@ -21,7 +21,7 @@ class MainController extends Controller
 
     public function show(Article $article) {
 
-        $comments = Comment::where('article_id', $article->id)->get();
+        $comments = Comment::where('article_id', $article->id)->orderBy('updated_at', 'desc')->get();
 
         return view('article', [
             'article' => $article,
