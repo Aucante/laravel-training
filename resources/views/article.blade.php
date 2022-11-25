@@ -25,26 +25,32 @@
             <div class="row">
                 <div class="col-md-10 offset-md-1">
                     <h1 class="display-6 border-bottom border-3 my-5">Espace commentaires</h1>
-                    <form action="{{ route('comment.store', $article->id) }}" method="POST">
-                        @csrf
-                        <div class="row">
-                            <div class="col-10">
-                                <div class="form-group">
-                                    <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" placeholder="Ecrivez votre commentaire ...">
-                                    @error('content')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                    @enderror
+                    @if(Auth::User())
+                        <form action="{{ route('comment.store', $article->id) }}" method="POST">
+                            @csrf
+                            <div class="row">
+                                <div class="col-10">
+                                    <div class="form-group">
+                                        <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" placeholder="Ecrivez votre commentaire ...">
+                                        @error('content')
+                                        <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                                        @enderror
+                                    </div>
+                                </div>
+                                <div class="col-2">
+                                    <div class="d-flex justify-content-center">
+                                        <button type="submit" class="btn btn-primary">Ajouter</button>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-2">
-                                <div class="d-flex justify-content-center">
-                                    <button type="submit" class="btn btn-primary">Ajouter</button>
-                                </div>
-                            </div>
+                        </form>
+                    @else
+                        <div>
+                            <p>Vous devez être connecté pour ajouter un commentaire. <a class="btn btn-link fw-bold" href="{{ route('login') }}">Se connecter</a></p>
                         </div>
-                    </form>
+                    @endif
                     @foreach($comments as $comment)
                         <div class="card my-4">
                             <div class="card-header">
