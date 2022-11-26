@@ -24,7 +24,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-10 offset-md-1">
-                    <h1 class="display-6 border-bottom border-3 my-5">Espace commentaires</h1>
+                    <h2 class="display-6 fs-3 border-bottom border-2 my-3">Espace commentaires</h2>
                     @if(Auth::User())
                         <form action="{{ route('comment.store', $article->id) }}" method="POST">
                             @csrf
@@ -55,8 +55,8 @@
                         <div class="card my-4">
                             <div class="card-header">
                                 <div class="d-flex align-content-start">
-                                    <img src="{{ Voyager::image($comment->user->avatar) }}" alt="{{ $comment->user->name }}-logo" class="img-thumbnail" style="height: 40px">
-                                    <p class="display-6 fs-4 mt-3 ms-2">{{ $comment->user->name }}</p>
+                                    <img src="{{ Voyager::image($comment->user->avatar) }}" alt="{{ $comment->user->name }}-logo" class="img-thumbnail" style="height: 30px">
+                                    <p class="display-6 fs-5 mt-2 ms-2">{{ $comment->user->name }}</p>
                                 </div>
                             </div>
                             <div class="card-body">
