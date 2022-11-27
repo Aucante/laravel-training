@@ -63,7 +63,37 @@
                                 <p class="display-6 fs-5">{{ $comment->content }}</p>
                             </div>
                             <div class="card-footer">
-                                <p class="display-6 fs-6">{{ $comment->updated_at}}</p>
+                                <div class="d-flex justify-content-between">
+                                    <p class="display-6 fs-6">{{ $comment->updated_at}}</p>
+                                    <div class="d-flex">
+                                        @if($comment->user_id === Auth::User()->id)
+                                            <span type="button" class="badge bg-danger my-2" onclick="document.getElementById('modal-open-{{ $comment->id }}').style.display='block'"><i class="fa-regular fa-trash-can"></i></span>
+                                            <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
+                                                @csrf
+                                                @method("DELETE")
+                                                <div class="modal" id="modal-open-{{ $comment->id }}">
+                                                    <div class="modal-dialog" role="document">
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <h5 class="modal-title">Suppresion élément</h5>
+                                                                <button type="button" class="btn-close" onclick="document.getElementById('modal-open-{{ $comment->id }}').style.display='none'" data-bs-dismiss="modal" aria-label="Close">
+                                                                    <span aria-hidden="true"></span>
+                                                                </button>
+                                                            </div>
+                                                            <div class="modal-body">
+                                                                <p>Vous allez supprimer l'élément</p>
+                                                            </div>
+                                                            <div class="modal-footer">
+                                                                <button type="submit" class="btn btn-primary">Supprimer</button>
+                                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" onclick="document.getElementById('modal-open-{{ $comment->id }}').style.display='none'">Annuler</button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        @endif
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     @endforeach

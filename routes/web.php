@@ -30,6 +30,7 @@ Route::get('/articles', [MainController::class, 'index'])->name('articles');
 Route::get('/article/{article:slug}', [MainController::class, 'show'])->name('article');
 
 Route::post('/comment/{article:id}', [CommentController::class, 'store'])->name('comment.store');
+Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->name('comment.destroy');
 
 Auth::routes();
 

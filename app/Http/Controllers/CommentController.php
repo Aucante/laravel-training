@@ -54,7 +54,7 @@ class CommentController extends Controller
         $articleId = $article->id;
         $userId = Auth::user()->id;
         $this->manager->build(new Comment(), $request, $articleId, $userId );
-        return redirect()->route('home')->with('success', "Le commentaire est enregistré");
+        return redirect()->route('article', $article)->with('success', "Le commentaire est enregistré");
     }
 
     /**
@@ -95,10 +95,11 @@ class CommentController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @return RedirectResponse
      */
-    public function destroy($id)
+    public function destroy(Comment $comment)
     {
-        //
+        $comment->delete();
+        return redirect()->route('articles')->with('success', "Le commentaire est supprimé");
     }
 }
