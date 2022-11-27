@@ -99,7 +99,9 @@ class CommentController extends Controller
      */
     public function destroy(Comment $comment)
     {
+        $article = Article::find($comment->article_id);
+
         $comment->delete();
-        return redirect()->route('articles')->with('success', "Le commentaire est supprimé");
+        return redirect()->route('article', $article)->with('success', "Le commentaire est supprimé");
     }
 }
