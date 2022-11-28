@@ -66,7 +66,8 @@
                                 <div class="d-flex justify-content-between">
                                     <p class="display-6 fs-6">{{ $comment->updated_at}}</p>
                                     <div class="d-flex">
-                                        @if($comment->user_id === Auth::User()->id)
+                                        @if(Auth::User())
+                                            @if($comment->user_id === Auth::User()->id)
                                             <span type="button" class="badge bg-danger my-2" onclick="document.getElementById('modal-open-{{ $comment->id }}').style.display='block'"><i class="fa-regular fa-trash-can"></i></span>
                                             <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
                                                 @csrf
@@ -91,6 +92,7 @@
                                                     </div>
                                                 </div>
                                             </form>
+                                        @endif
                                         @endif
                                     </div>
                                 </div>

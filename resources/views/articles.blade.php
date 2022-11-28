@@ -1,12 +1,16 @@
 @extends('base')
 
 @section('content')
+    @include('components.carousel')
+    <h1 class="d-flex justify-content-center display-4 mt-5">
+        Derniers articles
+    </h1>
     <div class="d-flex justify-content-center my-2">
         <div class="container text-center">
             <div class="row">
                 @foreach($articles as $article)
                     <div class="col-md-6">
-                        <div class="card my-5">
+                        <div class="card my-5" style="height: 24rem">
                             <img class="card-img-top" style="height: 14rem" src="{{ Voyager::image($article->image) }}" alt="Card image cap">
                             <div class="card-body">
                                 <p>
