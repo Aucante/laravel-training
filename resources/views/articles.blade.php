@@ -5,7 +5,7 @@
     <h1 class="d-flex justify-content-center display-4 mt-5">
         Derniers articles
     </h1>
-    <div class="d-flex justify-content-center my-2">
+    <div class="d-flex justify-content-center my-5">
         <div class="container text-center">
             <div class="row">
                 @foreach($articles as $article)
