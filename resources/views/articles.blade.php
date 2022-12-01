@@ -9,18 +9,27 @@
         <div class="container text-center">
             <div class="row">
                 @foreach($articles as $article)
-                    <div class="col-md-6">
-                        <div class="card my-5" style="height: 24rem">
-                            <img class="card-img-top" style="height: 14rem" src="{{ Voyager::image($article->image) }}" alt="Card image cap">
-                            <div class="card-body">
-                                <p>
-                                    <span class="badge bg-info">{{ $article->category->label }}</span>
-                                </p>
-                                <p class="card-text display-6">{{ $article->title }}</p>
-    {{--                                    <p class="card-text">{{ substr($article->content, 0,370) }}<a href="{{ route('article', $article->slug) }}" class="text-info text-decoration-none"> ... Lire la suite</a></p>--}}
-                                <a href="{{ route('article', $article->slug) }}"><button class="btn btn-primary rounded-0 mt-2">Lire la suite</button></a>
+
+                    <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4 px-3">
+                        <a href="{{ route('article', $article->slug) }}">
+                            <div class="card bg-dark text-white rounded-0 border-0">
+                                <div class="inner">
+                                    <img
+                                        src="{{ Voyager::image($article->image) }}"
+                                        class="card-img"
+                                        style="height: 240px; width: 100%"
+                                        alt="{{ $article->subtitle }}"
+                                    />
+                                    <div class="d-flex align-items-center justify-content-center card-img-overlay rounded-0 gradient-custom-4">
+                                        <div class="d-flex align-items-center justify-content-center text-center my-4">
+                                            <div class="d-flex align-items-center justify-content-center">
+                                                <p class="card-title display-5 text-center text-uppercase">{{ $article->subtitle }}</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
+                        </a>
                     </div>
                 @endforeach
             </div>
