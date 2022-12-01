@@ -1,6 +1,7 @@
 @extends('base')
 
 @section('content')
+    @include('components.carousel')
     <h1 class="d-flex justify-content-center display-4 mt-5">
         Derniers articles
     </h1>
@@ -39,9 +40,9 @@
                     </div>
                 @endforeach
             </div>
+            <div class="col-md-10 offset-md-1 col-lg-8 px-1 my-4 offset-lg-2">
+                <a href="{{ route('articles') }}"><button class="container btn btn-primary">Plus d'articles</button></a>
+            </div>
         </div>
-    </div>
-    <div class="d-flex justify-content-center my-4">
-        {{ $articles->links('vendor.pagination.custom') }}
     </div>
 @stop

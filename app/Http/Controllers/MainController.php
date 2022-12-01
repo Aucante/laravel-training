@@ -12,6 +12,13 @@ class MainController extends Controller
         return view('home');
     }
 
+    public function homepage() {
+        return view('home/homepage', [
+            'articles' => Article::paginate(5),
+            'categories' => Category::all(),
+        ]);
+    }
+
     public function index() {
         return view('articles', [
             'articles' => Article::paginate(5),
