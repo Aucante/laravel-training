@@ -3,8 +3,11 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\AuthGithubController;
 use App\Http\Controllers\Auth\AuthGoogleController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MainController;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
+use TCG\Voyager\Facades\Voyager;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,13 +29,16 @@ Route::get('/', [MainController::class, 'home'])->name('home');
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
 Route::get('/article/{article:slug}', [MainController::class, 'show'])->name('article');
 
+Route::post('/comment/{article:id}', [CommentController::class, 'store'])->name('comment.store');
+Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->name('comment.destroy');
+
 Auth::routes();
 
-Route::prefix('user')->middleware('admin')->group(function(){
-    Route::resource('articles', ArticleController::class)->except([
-        'show'
-    ]);
-});
+//Route::prefix('user')->middleware('admin')->group(function(){
+//    Route::resource('articles', ArticleController::class)->except([
+//        'show'
+//    ]);
+//});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();

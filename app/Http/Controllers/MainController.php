@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use App\Models\Category;
+use App\Models\Comment;
 
 class MainController extends Controller
 {
@@ -20,8 +21,11 @@ class MainController extends Controller
 
     public function show(Article $article) {
 
+        $comments = Comment::where('article_id', $article->id)->orderBy('updated_at', 'desc')->get();
+
         return view('article', [
-            'article' => $article
+            'article' => $article,
+            'comments' => $comments
         ]);
     }
 }

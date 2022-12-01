@@ -1,31 +1,46 @@
 @extends('base')
 
 @section('content')
-    <div class="container text-center my-3">
-        <h1 class="display-3">BLOG</h1>
-    </div>
-    <div class="d-flex justify-content-center my-2">
+    @include('components.carousel')
+    <h1 class="d-flex justify-content-center display-4 mt-5">
+        Derniers articles
+    </h1>
+    <div class="d-flex justify-content-center my-5">
         <div class="container text-center">
             <div class="row">
-                <div class="col-12">
-                    <div class="col-md-6 offset-md-3">
-                        @foreach($articles as $article)
-                            <div class="card my-5">
-                                <img class="card-img-top" style="height: 14rem" src="{{ Voyager::image($article->image) }}" alt="Card image cap">
-                                <div class="card-body">
-                                    <p>
-                                        <span class="badge bg-info">{{ $article->category->label }}</span>
-                                    </p>
-                                    <p class="card-text display-6">{{ $article->title }}</p>
-{{--                                    <p class="card-text">{{ substr($article->content, 0,370) }}<a href="{{ route('article', $article->slug) }}" class="text-info text-decoration-none"> ... Lire la suite</a></p>--}}
-                                    <a href="{{ route('article', $article->slug) }}"><button class="btn btn-primary rounded-0 mt-2">Lire la suite</button></a>
+                @foreach($articles as $article)
+
+                    <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4 px-3">
+                        <a href="{{ route('article', $article->slug) }}">
+                            <div class="card bg-dark text-white rounded-0 border-0">
+                                <div class="inner">
+                                    <img
+                                        src="{{ Voyager::image($article->image) }}"
+                                        class="card-img"
+                                        style="height: 240px; width: 100%"
+                                        alt="{{ $article->subtitle }}"
+                                    />
+                                    <div class="d-flex align-items-center justify-content-center card-img-overlay rounded-0 gradient-custom-4">
+                                        <div class="d-flex align-items-center justify-content-center text-center my-4">
+                                            <div class="row">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <p class="card-title display-6 text-center text-uppercase">{{ $article->title }}</p>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <button class="btn btn-light py-2">
+                                                        Lire l'article
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                        @endforeach
+                        </a>
                     </div>
-                </div>
+                @endforeach
             </div>
-            <div class="d-flex justify-content-center">
+            <div class="d-flex justify-content-center my-4">
                 {{ $articles->links('vendor.pagination.custom') }}
             </div>
         </div>
