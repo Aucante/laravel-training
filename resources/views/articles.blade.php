@@ -22,8 +22,15 @@
                                     />
                                     <div class="d-flex align-items-center justify-content-center card-img-overlay rounded-0 gradient-custom-4">
                                         <div class="d-flex align-items-center justify-content-center text-center my-4">
-                                            <div class="d-flex align-items-center justify-content-center">
-                                                <p class="card-title display-5 text-center text-uppercase">{{ $article->subtitle }}</p>
+                                            <div class="row">
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <p class="card-title display-6 text-center text-uppercase">{{ $article->title }}</p>
+                                                </div>
+                                                <div class="d-flex align-items-center justify-content-center">
+                                                    <button class="btn btn-light py-2">
+                                                        Lire l'article
+                                                    </button>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
