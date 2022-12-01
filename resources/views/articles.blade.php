@@ -10,7 +10,7 @@
             <div class="row">
                 @foreach($articles as $article)
 
-                    <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4 px-3">
+                    <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4">
                         <a href="{{ route('article', $article->slug) }}">
                             <div class="card bg-dark text-white rounded-0 border-0">
                                 <div class="inner">
@@ -40,9 +40,12 @@
                     </div>
                 @endforeach
             </div>
-            <div class="d-flex justify-content-center my-4">
-                {{ $articles->links('vendor.pagination.custom') }}
+            <div class="col-md-10 offset-md-1 col-lg-8 px-1 my-4 offset-lg-2">
+                <div class="container btn btn-primary">Plus d'articles</div>
             </div>
         </div>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        {{ $articles->links('vendor.pagination.custom') }}
     </div>
 @stop
