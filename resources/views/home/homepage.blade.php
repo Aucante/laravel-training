@@ -24,7 +24,7 @@
                                         <div class="d-flex align-items-center justify-content-center text-center my-4">
                                             <div class="row">
                                                 <div class="d-flex align-items-center justify-content-center">
-                                                    <p class="card-title display-6 text-center text-uppercase">{{ $article->title }}</p>
+                                                    <p class="card-title display-6 fs-4 text-center text-uppercase my-4">{{ $article->title }}</p>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <button class="btn btn-light py-2">

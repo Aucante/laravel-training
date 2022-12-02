@@ -31,7 +31,7 @@
                             <div class="row">
                                 <div class="col-10">
                                     <div class="form-group">
-                                        <input type="text" name="content" class="form-control @error('content') is-invalid @enderror" placeholder="Ecrivez votre commentaire ...">
+                                        <textarea name="content" class="form-control @error('content') is-invalid @enderror" placeholder="Ecrivez votre commentaire ..."></textarea>
                                         @error('content')
                                         <span class="invalid-feedback" role="alert">
                                     <strong>{{ $message }}</strong>
@@ -52,8 +52,8 @@
                         </div>
                     @endif
                     @foreach($comments as $comment)
-                        <div class="card my-4">
-                            <div class="card-header">
+                        <div class="card my-4 border-0 border-bottom border-top">
+                            <div class="card-header bg-light border-0 border-bottom">
                                 <div class="d-flex align-content-start">
                                     <img src="{{ Voyager::image($comment->user->avatar) }}" alt="{{ $comment->user->name }}-logo" class="img-thumbnail" style="height: 30px">
                                     <p class="display-6 fs-5 mt-2 ms-2">{{ $comment->user->name }}</p>
@@ -62,13 +62,13 @@
                             <div class="card-body">
                                 <p class="display-6 fs-5">{{ $comment->content }}</p>
                             </div>
-                            <div class="card-footer">
+                            <div class="card-footer border-0 border-top">
                                 <div class="d-flex justify-content-between">
                                     <p class="display-6 fs-6">{{ $comment->updated_at}}</p>
                                     <div class="d-flex">
                                         @if(Auth::User())
                                             @if($comment->user_id === Auth::User()->id)
-                                            <span type="button" class="badge bg-danger my-2" onclick="document.getElementById('modal-open-{{ $comment->id }}').style.display='block'"><i class="fa-regular fa-trash-can"></i></span>
+                                            <span type="button" class="badge bg-primary my-2" onclick="document.getElementById('modal-open-{{ $comment->id }}').style.display='block'"><i class="fa-regular fa-trash-can"></i></span>
                                             <form action="{{ route('comment.destroy', $comment->id) }}" method="POST">
                                                 @csrf
                                                 @method("DELETE")

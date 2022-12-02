@@ -14,7 +14,7 @@ class MainController extends Controller
 
     public function homepage() {
         return view('home/homepage', [
-            'articles' => Article::paginate(5),
+            'articles' => Article::select("*")->orderBy('updated_at', 'desc')->limit(5)->get(),
             'categories' => Category::all(),
         ]);
     }

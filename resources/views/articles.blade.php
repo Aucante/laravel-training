@@ -2,7 +2,7 @@
 
 @section('content')
     <h1 class="d-flex justify-content-center display-4 mt-5">
-        Derniers articles
+        Articles
     </h1>
     <div class="d-flex justify-content-center my-5">
         <div class="container text-center">
@@ -22,8 +22,8 @@
                                     <div class="d-flex align-items-center justify-content-center card-img-overlay rounded-0 gradient-custom-4">
                                         <div class="d-flex align-items-center justify-content-center text-center my-4">
                                             <div class="row">
-                                                <div class="d-flex align-items-center justify-content-center">
-                                                    <p class="card-title display-6 text-center text-uppercase">{{ $article->title }}</p>
+                                                <div class="d-flex align-items-center justify-content-center my-4">
+                                                    <p class="card-title display-6 fs-4 text-center text-uppercase">{{ $article->title }}</p>
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <button class="btn btn-light py-2">
