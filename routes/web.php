@@ -3,6 +3,7 @@
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\Auth\AuthGithubController;
 use App\Http\Controllers\Auth\AuthGoogleController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\MainController;
 use Illuminate\Support\Facades\Auth;
@@ -29,6 +30,9 @@ Route::get('/homepage', [MainController::class, 'homepage'])->name('homepage');
 
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
 Route::get('/article/{article:slug}', [MainController::class, 'show'])->name('article');
+
+Route::get('/categories', [CategoryController::class, 'index'])->name('categories');
+Route::get('/category/{category:label}', [CategoryController::class, 'show'])->name('category');
 
 Route::post('/comment/{article:id}', [CommentController::class, 'store'])->name('comment.store');
 Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->name('comment.destroy');

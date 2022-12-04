@@ -26,7 +26,7 @@
                             <h1 class="display-5 fs-3 text-uppercase text-light">Hormonal optimization</h1>
                         </div>
                     </div>
-                    <a href="{{ route('login') }}"><button class="btn btn-light my-3">connexion</button></a>
+                    <a href="{{ route('categories') }}"><button class="btn btn-light my-3">categories</button></a>
                 </div>
             </div>
         </div>
@@ -41,7 +41,7 @@
                             <h1 class="display-5 fs-3 text-uppercase text-light">Improve your training</h1>
                         </div>
                     </div>
-                    <a href="{{ route('login') }}"><button class="btn btn-light my-3">connexion</button></a>
+                    <a href="{{ route('categories') }}"><button class="btn btn-light my-3">categories</button></a>
                 </div>
             </div>
         </div>

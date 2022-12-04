@@ -7,7 +7,7 @@
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto me-4">
                 <li class="nav-item border-end pe-4">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item border-end pe-4">
                     <a class="nav-link active" aria-current="page" href="#">Training</a>

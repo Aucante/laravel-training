@@ -6,6 +6,10 @@ PHP 7.4
 Composer  
 Laravel 8
 
+## Launch application
+
+php artisan serve
+
 ## Seeders
 
 Follow this order :
