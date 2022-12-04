@@ -2,12 +2,12 @@
 
 @section('content')
     @include('components.carousel')
-    <h1 class="d-flex justify-content-center display-4 mt-5">
-        Derniers articles
-    </h1>
     <div class="d-flex justify-content-center my-5">
         <div class="container text-center">
             <div class="row">
+                <h1 class="container display-5 my-5 border-bottom">
+                    Derniers articles
+                </h1>
                 @foreach($articles as $article)
 
                     <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4">
