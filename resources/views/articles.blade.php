@@ -1,7 +1,7 @@
 @extends('base')
 
 @section('content')
-    <h1 class="d-flex justify-content-center display-4 mt-5">
+    <h1 class="container display-5 my-5 border-bottom">
         Articles
     </h1>
     <div class="d-flex justify-content-center my-5">

@@ -10,10 +10,10 @@
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
                 <li class="nav-item border-end pe-4">
-                    <a class="nav-link active" aria-current="page" href="#">Training</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('categories') }}">Training</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#">Nutrition</a>
+                    <a class="nav-link active" aria-current="page" href="{{ route('categories') }}">Nutrition</a>
                 </li>
                 @if(Auth::User())
                     @if(Auth::User()->role === 'ADMIN')

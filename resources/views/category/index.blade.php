@@ -1,14 +1,16 @@
 @extends('base')
 
 @section('content')
-    <h1 class="container display-5 my-5 border-bottom">
-        Catégories
-    </h1>
-    <div class="d-flex justify-content-center my-5">
-        <div class="container text-center">
-            <div class="row">
+    <div class="pt-5">
+        <h1 class="container display-5 my-5 border-bottom">
+            Catégories
+        </h1>
+    </div>
+    <div class="d-flex justify-content-center my-4">
+        <div class="container text-center my-4">
+            <div class="row my-5">
                 @foreach($categories as $category)
-                    <div data-aos="fade-right" class="col-md-6 my-4">
+                    <div data-aos="fade-right" class="col-md-6 my-5">
                         <a href="{{ route('category', $category->label) }}">
                             <div class="card bg-dark text-white rounded-0 border-0">
                                 <div class="inner">
