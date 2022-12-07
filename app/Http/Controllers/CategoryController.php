@@ -52,7 +52,7 @@ class CategoryController extends Controller
     public function show($category)
     {
         $objectCategory = Category::where('label', $category)->first();
-        $articles = Article::where('category_id', $objectCategory->id)->orderBy('updated_at', 'desc')->get();
+        $articles = Article::where('category_id', $objectCategory->id)->orderBy('updated_at', 'desc')->paginate(4);
 
         return view('category.show', [
             'category' => $category,
