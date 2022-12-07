@@ -16,8 +16,8 @@ Follow this order :
 ```bash
 php artisan db:seed --class=CategorySeeder  
 php artisan db:seed --class=ArticleSeeder  
-php artisan db:seed --class=CommentSeeder  
 php artisan db:seed --class=AdminSeeder  
+php artisan db:seed --class=CommentSeeder  
 ```
 
 ## Admin Link (Voyager)
@@ -28,4 +28,6 @@ URL :
 Create admin user :
 ```bash
 php artisan voyager:admin test@test.com --create
+
+php artisan voyager:install
 ```

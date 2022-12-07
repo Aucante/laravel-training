@@ -14,6 +14,7 @@ class Article extends Model
         'slug',
         'subtitle',
         'content',
+        'image',
         'category_id',
     ];
 

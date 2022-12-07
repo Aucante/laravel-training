@@ -18,7 +18,8 @@ class CategorySeeder extends Seeder
     public function run()
     {
         Category::factory(2)->create([
-            'icon' => 'address-book'
+            'icon' => 'address-book',
+            'image' => 'categories/December2022/uMZsVyYAIgZgYl1NVucK.jpg'
         ]);
 
 

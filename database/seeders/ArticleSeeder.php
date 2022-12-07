@@ -21,7 +21,8 @@ class ArticleSeeder extends Seeder
     {
         Category::get()->each(function ($category) {
             Article::factory(5)->create([
-                'category_id' => $category->id
+                'image' => 'categories/December2022/uMZsVyYAIgZgYl1NVucK.jpg',
+                'category_id' => $category->id,
             ]);
         });
 

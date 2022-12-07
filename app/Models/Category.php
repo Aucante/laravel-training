@@ -11,7 +11,8 @@ class Category extends Model
 
     protected $fillable = [
         'label',
-        'icon'
+        'icon',
+        'image'
     ];
 
     public function articles()
