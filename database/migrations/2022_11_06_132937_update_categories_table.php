@@ -15,6 +15,7 @@ class UpdateCategoriesTable extends Migration
     {
         Schema::table('categories', function (Blueprint $table) {
             $table->string('icon');
+            $table->string('image');
         });
     }
 
