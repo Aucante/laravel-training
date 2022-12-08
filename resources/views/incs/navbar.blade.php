@@ -1,3 +1,5 @@
+@inject('categoriesList', 'App\Helper\CategoryHelper')
+
 <nav class="navbar navbar-expand-lg bg-light shadow-sm">
     <div class="container-fluid">
         <a class="navbar-brand" href="{{ route('homepage') }}"><img src="{{ asset('ExpertiseNutrition.png') }}" style="height: 50px"></a>
@@ -6,15 +8,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
             <ul class="navbar-nav ms-auto me-4">
-                <li class="nav-item border-end pe-4">
+                <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="{{ route('homepage') }}">Home</a>
                 </li>
-                <li class="nav-item border-end pe-4">
-                    <a class="nav-link active" aria-current="page" href="{{ route('categories') }}">Training</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="{{ route('categories') }}">Nutrition</a>
-                </li>
+                @foreach($categoriesList->findCategories()->getData() as $key => $value)
+                    @php
+                        $length = count($value->all());
+                    @endphp
+                    @for($i = 0; $i < $length; $i++)
+{{--                        @dump($value->get($i)->label)--}}
+                        <li class="nav-item border-start ps-4">
+                            <a class="nav-link active" aria-current="page" href="{{ route('category', $value->get($i)->label) }}">{{ $value->get($i)->label }}</a>
+                        </li>
+                    @endfor
+                @endforeach
+
                 @if(Auth::User())
                     @if(Auth::User()->role === 'ADMIN')
                         <li class="nav-item">
