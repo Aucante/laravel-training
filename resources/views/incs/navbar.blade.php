@@ -31,11 +31,11 @@
                     @endif
                     <form action="{{route('logout')}}" method="POST">
                         @csrf
-                        <button type="submit" class="btn btn-primary">Logout</button>
+                        <button type="submit" class="btn btn-primary">Deconnexion</button>
                     </form>
                 @else
                     <li class="nav-item me-2">
-                        <a class="nav-link active btn btn-primary text-light" aria-current="page" href="{{route('login')}}">Sign in</a>
+                        <a class="nav-link active btn btn-primary text-light" aria-current="page" href="{{route('login')}}">Connexion</a>
                     </li>
                 @endif
             </ul>
