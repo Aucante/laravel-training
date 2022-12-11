@@ -6,7 +6,7 @@
         <div class="container text-center">
             <div class="row">
                 <h1 class="container display-5 my-5 border-bottom">
-                    Derniers articles
+                    Last articles
                 </h1>
                 @foreach($articles as $article)
 
@@ -28,7 +28,7 @@
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <button class="btn btn-light py-2">
-                                                        Lire l'article
+                                                        Read more
                                                     </button>
                                                 </div>
                                             </div>
@@ -40,8 +40,11 @@
                     </div>
                 @endforeach
             </div>
+            <h2 class="container display-5 my-5 border-bottom">
+                More articles
+            </h2>
             <div class="col-md-10 offset-md-1 col-lg-8 px-1 my-4 offset-lg-2">
-                <a href="{{ route('articles') }}"><button class="container btn btn-primary">Plus d'articles</button></a>
+                <a href="{{ route('categories') }}"><button class="container btn btn-primary">Discover here</button></a>
             </div>
         </div>
     </div>

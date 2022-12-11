@@ -3,7 +3,7 @@
 @section('content')
     <div class="pt-5">
         <h1 class="container display-5 my-5 border-bottom">
-            Catégories
+            Categories
         </h1>
     </div>
     <div class="d-flex justify-content-center my-4">
@@ -28,7 +28,7 @@
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <button class="btn btn-light py-2">
-                                                        Découvrez
+                                                        Discover
                                                     </button>
                                                 </div>
                                             </div>

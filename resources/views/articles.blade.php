@@ -27,7 +27,7 @@
                                                 </div>
                                                 <div class="d-flex align-items-center justify-content-center">
                                                     <button class="btn btn-light py-2">
-                                                        Lire l'article
+                                                        Read this article
                                                     </button>
                                                 </div>
                                             </div>
