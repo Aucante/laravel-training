@@ -24,9 +24,9 @@
                 @endforeach
 
                 @if(Auth::User())
-                    @if(Auth::User()->role === 'ADMIN')
+                    @if(Auth::User()->role_id === 1)
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="{{ route('articles.index') }}">Espace Admin</a>
+                            <a class="nav-link active border-start ps-4" aria-current="page" href="{{ route('voyager.login') }}">Admin Access</a>
                         </li>
                     @endif
                     <form action="{{route('logout')}}" method="POST">
