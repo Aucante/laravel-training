@@ -16,7 +16,6 @@
                         $length = count($value->all());
                     @endphp
                     @for($i = 0; $i < $length; $i++)
-{{--                        @dump($value->get($i)->label)--}}
                         <li class="nav-item border-start ps-4">
                             <a class="nav-link active" aria-current="page" href="{{ route('category', $value->get($i)->label) }}">{{ $value->get($i)->label }}</a>
                         </li>
