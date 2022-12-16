@@ -23,11 +23,11 @@ class RouteTest extends TestCase
         $response->assertStatus(200);
     }
 
-//    public function testAccessAdminWithUserRole()
-//    {
-//        $admin = Auth::loginUsingId(2);
-//        $this->actingAs($admin);
-//        $response = $this->get('/admin/articles');
-//        $response->assertStatus(302);
-//    }
+    public function testAccessAdminWithUserRole()
+    {
+        $user = Auth::loginUsingId(5);
+        $this->actingAs($user);
+        $response = $this->get('/admin');
+        $response->assertStatus(302);
+    }
 }
