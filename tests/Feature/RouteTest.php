@@ -11,15 +11,15 @@ class RouteTest extends TestCase
 {
     public function testAccessAdminWithGuestRole()
     {
-        $response = $this->get('/admin/articles');
-        $response->assertRedirect('/login');
+        $response = $this->get('/admin');
+        $response->assertRedirect('/admin/login');
     }
 
     public function testAccessAdminWithAdminRole()
     {
         $admin = Auth::loginUsingId(1);
         $this->actingAs($admin);
-        $response = $this->get('/admin/articles');
+        $response = $this->get('/admin');
         $response->assertStatus(200);
     }
 
