@@ -23,17 +23,17 @@
 }
 
 .gradientContainerTop {
-    height: 180px;
-    background-color: #e0f7fa;
-    background-image: linear-gradient(0deg, #e0f7fa 0%, #ffffff 100%);
+    height: 280px;
+    background: rgb(255,255,255);
+    background: linear-gradient(180deg, rgba(255,255,255,1) 0%, rgba(54,54,133,1) 68%, rgba(4,4,82,1) 100%);
 }
 
 .gradientContainerBottom {
-    height: 180px;
-    background-color: #e0f7fa;
-    background-image: linear-gradient(180deg, #e0f7fa 0%, #ffffff 100%);
+    height: 280px;
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 0%, rgba(54,54,133,1) 68%, rgba(4,4,82,1) 100%);
 }
 
 .gradient-bg {
-    background-color: #e0f7fa;
+    background-color: #040452;
 }
