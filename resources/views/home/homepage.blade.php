@@ -12,7 +12,7 @@
 
                     <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4">
                         <a href="{{ route('article', $article->slug) }}">
-                            <div class="card bg-dark text-white rounded-0 border-0">
+                            <div class="card bg-dark rounded-0 border-0 text-white">
                                 <div class="inner">
                                     <img
                                         src="{{ Voyager::image($article->image) }}"
