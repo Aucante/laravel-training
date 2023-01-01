@@ -40,11 +40,8 @@
                     </div>
                 @endforeach
             </div>
-            <h2 class="container display-5 my-5 border-bottom">
-                More articles
-            </h2>
             <div class="col-md-10 offset-md-1 col-lg-8 px-1 my-4 offset-lg-2">
-                <a href="{{ route('categories') }}"><button class="container btn btn-primary">Discover here</button></a>
+                <a href="{{ route('categories') }}"><button class="container btn btn-primary">MORE ARTICLES</button></a>
             </div>
         </div>
     </div>
