@@ -5,8 +5,8 @@
     <div class="d-flex justify-content-center my-5">
         <div class="container text-center">
             <div class="row">
-                <h1 class="container display-5 my-5 border-bottom">
-                    Last articles
+                <h1 class="container display-6 my-3 border-bottom pb-4">
+                    Discover last articles
                 </h1>
                 @foreach($articles as $article)
 
@@ -40,10 +40,8 @@
                     </div>
                 @endforeach
             </div>
-            <div class="col-md-10 offset-md-1 col-lg-8 px-1 my-4 offset-lg-2">
-                <a href="{{ route('categories') }}"><button class="container btn btn-primary">MORE ARTICLES</button></a>
-            </div>
         </div>
     </div>
     @include('components.gradient')
+    @include('components.newsletter')
 @stop
