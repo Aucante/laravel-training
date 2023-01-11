@@ -1,5 +1,5 @@
 {{--<div class="container-fluid gradientContainerTop"></div>--}}
-<div class="container-fluid bg-dark my-5">
+<div class="container-fluid bg-dark my-5 py-2">
     <div class="container py-5">
         <div class="align-items-center text-center row">
             <div
