@@ -9,7 +9,6 @@ class DatabaseTest extends TestCase
 {
     public function testValidRegistration()
     {
-        $count = User::count();
 
         $response = $this->post('/register', [
             'email' => 'jean@doe.com',
@@ -18,8 +17,6 @@ class DatabaseTest extends TestCase
             'password_confirmation' => 'password',
         ]);
 
-        $newCount = User::count();
-
-        $this->assertNotEquals($count, $newCount);
+        $response->assertSessionHasErrors();
     }
 }

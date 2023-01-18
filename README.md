@@ -31,3 +31,8 @@ php artisan voyager:admin test@test.com --create
 
 php artisan voyager:install
 ```
+
+Run tests
+```bash
+php artisan test
+```
