@@ -9,13 +9,13 @@ use Tests\TestCase;
 
 class RouteTest extends TestCase
 {
-    public function testAccessAdminWithGuestRole()
+    public function testAccessAdminWithGuestRole(): void
     {
         $response = $this->get('/admin');
         $response->assertRedirect('/admin/login');
     }
 
-    public function testAccessAdminWithAdminRole()
+    public function testAccessAdminWithAdminRole(): void
     {
         $admin = Auth::loginUsingId(1);
         $this->actingAs($admin);
@@ -23,7 +23,7 @@ class RouteTest extends TestCase
         $response->assertStatus(200);
     }
 
-    public function testAccessAdminWithUserRole()
+    public function testAccessAdminWithUserRole(): void
     {
         $user = Auth::loginUsingId(5);
         $this->actingAs($user);
