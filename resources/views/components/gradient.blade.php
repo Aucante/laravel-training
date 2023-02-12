@@ -13,11 +13,10 @@
                 class="col-6 col-md-6 col-lg-4 offset-lg-2 my-4"
             >
                 <div data-aos="zoom-in" class="container text-center border-start">
-                    <p class="display-5 fs-4 text-uppercase text-light">
+                    <p class="display-5 fs-2 text-uppercase text-light ps-4">
                         Improve your training level
                     </p>
-                    <p class="display-6 fs-6 text-uppercase text-light my-3">
-                        Improve your training level and optimize your nutrition
+                    <p class="display-6 fs-5 text-uppercase text-light my-3 ps-4 pt-4">
                         Improve your training level and optimize your nutrition
                         Improve your training level and optimize your nutrition
                     </p>
