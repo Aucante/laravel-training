@@ -1,4 +1,4 @@
-<div id="carouselExampleControls" class="carousel slide pb-5" data-bs-ride="carousel">
+<div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
         <div class="carousel-item active">
             <img src="{{ asset('carouselImage2.jpg') }}" class="d-block w-100" alt="carousel1">

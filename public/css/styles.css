@@ -1,3 +1,12 @@
+@media (max-width: 900px) {
+    #carouselExampleControls {
+        display: none;
+    }
+
+    #mediaHome {
+        display: none;
+    }
+}
 
 .inner {
     overflow: hidden;

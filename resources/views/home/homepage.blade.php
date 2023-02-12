@@ -3,7 +3,7 @@
 @section('content')
     @include('components.carousel')
     <div class="d-flex justify-content-center my-5">
-        <div class="container text-center my-5">
+        <div class="container text-center">
             <div class="row">
                 <h1 class="container display-6 my-3 border-bottom pb-4">
                     Discover last articles
