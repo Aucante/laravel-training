@@ -5,12 +5,12 @@
     <div class="d-flex justify-content-center my-5">
         <div class="container text-center">
             <div class="row">
-                <h1 class="container display-6 my-3 border-bottom pb-4">
+                <h1 class="container display-6 my-4 border-bottom pb-4">
                     Discover last articles
                 </h1>
                 @foreach($articles as $article)
 
-                    <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-4">
+                    <div data-aos="fade-right" class="col-md-10 offset-md-1 col-lg-8 offset-lg-2 my-5">
                         <a href="{{ route('article', $article->slug) }}">
                             <div class="card bg-dark rounded-0 border-0 text-white">
                                 <div class="inner">
