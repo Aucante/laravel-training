@@ -6,7 +6,7 @@
                 class="col-6 col-md-6 col-lg-4 offset-lg-1 my-4"
             >
                 <div data-aos="zoom-in" class="container text-center">
-                    <img src="{{ asset('media1.jpg') }}" class="d-block w-100" alt="carousel1">
+                    <img src="{{ asset('media1.jpg') }}" class="d-block w-100 rounded-3" alt="carousel1">
                 </div>
             </div>
             <div
