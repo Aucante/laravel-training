@@ -36,3 +36,18 @@ Run tests
 ```bash
 php artisan test
 ```
+
+Deploy Heroku
+```bash
+heroku run bash
+```
+```bash
+composer install
+```
+```bash
+php artisan migrate 
+```
+If you need to drop and migrate DB
+```bash
+php artisan migrate:fresh
+```
