@@ -6,6 +6,8 @@
     "license": "MIT",
     "require": {
         "php": "^7.4|^8.0",
+        "ext-exif": "*",
+        "ext-gd": "*",
         "cocur/slugify": "^4.2",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -15,8 +17,7 @@
         "laravel/tinker": "^2.5",
         "laravel/ui": "^3.4",
         "livewire/livewire": "^2.10",
-        "tcg/voyager": "^1.6",
-        "ext-gd": "*"
+        "tcg/voyager": "^1.6"
     },
     "require-dev": {
         "facade/ignition": "^2.5",
