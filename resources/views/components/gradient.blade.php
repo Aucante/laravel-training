@@ -1,5 +1,5 @@
 {{--<div class="container-fluid gradientContainerTop"></div>--}}
-<div class="container-fluid bg-dark my-5 py-2">
+<div class="container-fluid bg-dark my-5 py-2 gradientDisplayMobile">
     <div class="container py-5">
         <div class="align-items-center text-center row">
             <div
@@ -17,8 +17,25 @@
                         Improve your training level
                     </p>
                     <p class="display-6 fs-5 text-uppercase text-light my-3 ps-4 pt-4">
-                        Improve your training level and optimize your nutrition
-                        Improve your training level and optimize your nutrition
+                        Optimize your nutrition and your hormal rate
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid bg-dark my-5 py-2 gradientDisplayComputer">
+    <div class="container py-5">
+        <div class="align-items-center text-center row">
+            <div
+                class="col-12 my-4"
+            >
+                <div data-aos="zoom-in" class="container text-center">
+                    <p class="display-5 fs-2 text-uppercase text-light ps-4">
+                        Improve your training level
+                    </p>
+                    <p class="display-6 fs-5 text-uppercase text-light my-3 ps-4 pt-4">
+                        Optimize your nutrition and your hormal rate
                     </p>
                 </div>
             </div>

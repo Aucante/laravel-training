@@ -6,6 +6,16 @@
     #mediaHome {
         display: none;
     }
+
+    .gradientDisplayMobile {
+        display: none;
+    }
+}
+
+@media (min-width: 901px) {
+    .gradientDisplayComputer {
+        display: none;
+    }
 }
 
 .inner {
