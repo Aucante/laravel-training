@@ -1,18 +1,18 @@
 @extends('base')
 
 @section('content')
-    <div class="container text-center">
+    <div class="container">
         <div class="row">
             <div class="col-10 offset-1">
                     <div class="card border-0 my-2">
                         <div class="card-body">
-                            <h1 class="card-text display-5 mt-5">{{ $article->title }}</h1>
-                            <div class="d-flex justify-content-center row">
+                            <h1 class="card-text display-5 mt-5 text-center">{{ $article->title }}</h1>
+                            <div class="d-flex row text-center">
                                 <img src="{{ Voyager::image($article->image) }}" alt="{{ $article->subtitle }}" class="my-4">
                             </div>
-                            <p class="card-text display-4 fs-1 mt-5">{{ $article->subtitle }}</p>
+                            <p class="card-text display-4 fs-1 mt-5 text-center">{{ $article->subtitle }}</p>
                             <p class="card-text display-6 fs-5 my-5">{{ Markdown::parse($article->content) }}</p>
-                            <p class="card-text display-6 fs-6 my-5">Last modification : {!! $article->updated_at !!} | {{ $article->category->label }}</p>
+                            <p class="card-text display-6 fs-6 my-5 text-center">Last modification : {!! $article->updated_at !!} | {{ $article->category->label }}</p>
                         </div>
                     </div>
             </div>
