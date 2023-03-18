@@ -39,11 +39,6 @@ Route::delete('/comment/{comment:id}', [CommentController::class, 'destroy'])->n
 
 Auth::routes();
 
-//Route::prefix('user')->middleware('admin')->group(function(){
-//    Route::resource('articles', ArticleController::class)->except([
-//        'show'
-//    ]);
-//});
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
@@ -54,3 +49,9 @@ Route::get('/auth/github/redirect', [AuthGithubController::class, 'redirect'])->
 
 Route::get('/auth/google', [AuthGoogleController::class, 'auth'])->name('google.auth');
 Route::get('/auth/google/redirect', [AuthGoogleController::class, 'redirect'])->name('google.redirect');
+
+//Route::prefix('user')->middleware('admin')->group(function(){
+//    Route::resource('articles', ArticleController::class)->except([
+//        'show'
+//    ]);
+//});
