@@ -25,8 +25,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/', [MainController::class, 'home'])->name('home');
-Route::get('/homepage', [MainController::class, 'homepage'])->name('homepage');
+//Route::get('/', [MainController::class, 'home'])->name('home');
+Route::get('/', [MainController::class, 'homepage'])->name('homepage');
 
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
 Route::get('/article/{article:slug}', [MainController::class, 'show'])->name('article');
